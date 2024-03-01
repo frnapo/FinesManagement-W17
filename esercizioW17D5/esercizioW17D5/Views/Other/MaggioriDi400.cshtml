@@ -1,0 +1,75 @@
+﻿@model IEnumerable<esercizioW17D5.Models.Verbale>
+
+@{
+    ViewBag.Title = "MaggioriDi400";
+}
+
+<h2 class="text-center">VERBALI CON IMPORTO DI 400 EURO</h2>
+
+<p>
+    @Html.ActionLink("<- Indietro", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Data violazione
+        </th>
+        <th>
+            Indirizzo violazione
+        </th>
+        <th>
+            Agente
+        </th>
+        <th>
+            Trascrizione verbale
+        </th>
+        <th>
+            Importo
+        </th>
+        <th>
+            Punti decurtati
+        </th>
+        <th>
+            Trasgressore
+        </th>
+        <th>
+            Violazione
+        </th>
+        <th>
+            Importo
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.DataViolazione.ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndirizzoViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NominativoAgente)
+        </td>
+        <td>
+            @item.DataTrascrizioneVerbale.ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DecurtamentoPunti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trasgressore.Cognome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Violazione.Descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importo)
+        </td>
+    </tr>
+}
+
+</table>

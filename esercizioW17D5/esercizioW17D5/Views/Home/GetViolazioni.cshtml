@@ -1,0 +1,43 @@
+﻿@model IEnumerable<esercizioW17D5.Models.Violazione>
+
+@{
+    ViewBag.Title = "GetViolazioni";
+}
+
+<h2 class="text-center">TUTTI I TIPI DI VIOLAZIONE</h2>
+
+<p>
+    <div>
+        @Html.ActionLink("<- Indietro", "Index", new { }, new { @class = "text-decoration-none" })
+    </div>
+    @Html.ActionLink("NUOVA VIOLAZIONE", "NewViolazione", new { }, new { @class = "mt-3 btn btn-success rounded-0" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDViolazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contestabile)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contestabile)
+        </td>
+    </tr>
+}
+
+</table>

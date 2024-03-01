@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row">
+        <div class="col-12 text-center mt-4">
+            <img alt="logo" src="~/Content/logo.png"/>
+        </div>
+        <h2 class="m-4 fs-5 text-center">Benvenuto nel gestionale verbali, clicca su un pulsante per iniziare</h2>
+        <div class="d-flex m-4 justify-content-evenly">
+            @Html.ActionLink("TRASGRESSORI", "GetTrasgressori", new { }, new { @class = "btn btn-outline-danger ms-5 fw-bold p-3 rounded-0 border border-3 border-danger" })
+            @Html.ActionLink("VIOLAZIONI", "GetViolazioni", new { }, new { @class = "btn btn-outline-danger fw-bold p-3 rounded-0 border border-3 border-danger" })
+            @Html.ActionLink("VERBALI", "GetVerbali", new { }, new { @class = "btn btn-outline-danger fw-bold p-3 rounded-0 border border-3 border-danger" })
+            @Html.ActionLink("ALTRE OPERAZIONI", "Index", "Other", new { }, new { @class = "btn btn-success me-5 fw-bold p-3 rounded-0 " })
+        </div>
+    </section>
+
+</main>

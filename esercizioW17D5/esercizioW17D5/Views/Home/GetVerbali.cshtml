@@ -1,0 +1,79 @@
+﻿@model IEnumerable<esercizioW17D5.Models.Verbale>
+
+@{
+    ViewBag.Title = "GetVerbali";
+}
+
+<h2 class="text-center">VERBALI</h2>
+
+<p>
+    <div>
+        @Html.ActionLink("<- Indietro", "Index", new { }, new { @class = "text-decoration-none" })
+    </div>
+    @Html.ActionLink("NUOVO VERBALE", "NewVerbale", new { }, new { @class = "mt-3 btn btn-success rounded-0" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDVerbale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataViolazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IndirizzoViolazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NominativoAgente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataTrascrizioneVerbale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Importo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DecurtamentoPunti)
+        </th>
+        <th>
+            Trasgressore
+        </th>
+<th>
+            Violazione
+</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDVerbale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndirizzoViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NominativoAgente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataTrascrizioneVerbale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DecurtamentoPunti)
+        </td>
+<td>
+    @Html.DisplayFor(modelItem => item.Trasgressore.Cognome)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => item.Violazione.Descrizione)
+</td>
+
+    </tr>
+}
+
+</table>

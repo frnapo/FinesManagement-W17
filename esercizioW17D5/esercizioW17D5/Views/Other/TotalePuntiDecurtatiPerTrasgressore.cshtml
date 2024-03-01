@@ -1,0 +1,28 @@
+﻿@model IEnumerable<esercizioW17D5.Models.Verbale>
+
+<h2 class="text-center">TOTALE  PUNTI DECURTATI PER TRASGRESSORE</h2>
+<p>
+    @Html.ActionLink("<- Indietro", "Index")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Anagrafica</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Totale Punti Decurtati</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IDAnagrafica</td>
+                <td>@item.Trasgressore.Nome</td>
+                <td>@item.Trasgressore.Cognome</td>
+                <td>@item.DecurtamentoPunti</td>
+            </tr>
+        }
+    </tbody>
+</table>

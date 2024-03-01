@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">ALTRE OPERAZIONI</h2>
+<div>
+    @Html.ActionLink("<- Indietro", "Index", "Home", new { }, new { @class = "text-decoration-none" })
+</div>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 d-flex flex-column w-100">
+        @Html.ActionLink("Verbali per trasgressore", "TotaleVerbaliPerTrasgressore", new { }, new { @class = "btn btn-primary fw-bold p-3 m-4 rounded-0" })
+        @Html.ActionLink("Punti decurtati per trasgressore", "TotalePuntiDecurtatiPerTrasgressore", new { }, new { @class = "btn btn-primary fw-bold p-3 m-4 rounded-0" })
+        @Html.ActionLink("Verbali maggiori di 10 punti", "DecurtazionePuntiMaggioriDi10", new { }, new { @class = "btn btn-primary fw-bold p-3 m-4 rounded-0 " })
+        @Html.ActionLink("Verbali maggiori di 400 euro", "MaggioriDi400", new { }, new { @class = "btn btn-primary fw-bold p-3 m-4 rounded-0 " })
+    </div>
+    <div class="col-4"></div>
+</div>
+

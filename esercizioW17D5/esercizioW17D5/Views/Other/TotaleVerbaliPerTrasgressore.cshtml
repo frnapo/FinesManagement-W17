@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<esercizioW17D5.Models.Verbale>
+
+<h2 class="text-center">TOTALE DEI VERBALI RAGGRUPPATI PER TRASGRESSORE</h2>
+<p>
+    @Html.ActionLink("<- Indietro", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>ID Anagrafica</th>
+        <th>Cognome</th>
+        <th>Nome</th>
+        <th>Totale Verbali</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IDAnagrafica</td>
+            <td>@item.Trasgressore.Cognome</td>
+            <td>@item.Trasgressore.Nome</td>
+            <td>@item.IDVerbale</td>
+        </tr>
+    }
+</table>

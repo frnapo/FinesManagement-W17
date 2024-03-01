@@ -1,0 +1,32 @@
+﻿
+
+@model IEnumerable<esercizioW17D5.Models.Verbale>
+
+@{
+    ViewBag.Title = "Decurtazione Punti Maggiori Di 10";
+}
+
+<h2 class="text-center">VERBALI CON DECURTAZIONE MAGGIORE DI 10 PUNTI</h2>
+<p>
+    @Html.ActionLink("<- Indietro", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>Importo</th>
+        <th>Decurtamento Punti</th>
+        <th>Cognome</th>
+        <th>Nome</th>
+        <th>Data Violazione</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Importo</td>
+            <td>@item.DecurtamentoPunti</td>
+            <td>@item.Trasgressore.Cognome</td>
+            <td>@item.Trasgressore.Nome</td>
+            <td>@item.DataViolazione.ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
